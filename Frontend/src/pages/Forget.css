@@ -1,0 +1,208 @@
+/* ==============================
+   Reset & Base
+   ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #004643; /* Background */
+  color: #fffffe; /* Default text color */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==============================
+   Header
+   ============================== */
+header {
+  background-color: #001e1d; /* Illustration stroke */
+  color: #fffffe;            /* Headline */
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 1rem;
+}
+
+.nav-links a {
+  color: #fffffe;
+  font-weight: bold;
+  padding: 8px 16px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #f9bc60; /* Highlight */
+  color: #001e1d;            /* Button text */
+  border-radius: 4px;
+}
+
+/* ==============================
+   Forgot Password Section
+   ============================== */
+.forgot-password-section {
+  padding: 60px 0;
+  background-color: #004643; /* Background */
+}
+
+.forgot-password-container {
+  background-color: #e8e4e6; /* Main */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  margin: 0 auto;
+  color: #001e1d; /* Stroke/Text */
+  text-align: left;
+}
+
+/* ==============================
+   Headings & Text
+   ============================== */
+.forgot-password-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #001e1d;
+}
+
+.forgot-password-container p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #333333; /* Paragraph */
+  text-align: center;
+}
+
+/* ==============================
+   Form Styling
+   ============================== */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #001e1d;
+}
+
+.form-group label i {
+  margin-right: 10px;
+  color: #001e1d; /* Icon stroke */
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #abd1c6; /* Secondary */
+  border-radius: 4px;
+  background-color: #fffffe;
+  color: #001e1d;
+}
+
+input:focus {
+  border-color: #f9bc60; /* Highlight */
+  outline: none;
+  box-shadow: 0 0 6px rgba(249, 188, 96, 0.6);
+}
+
+/* ==============================
+   Buttons
+   ============================== */
+button,
+.resend-button {
+  background-color: #f9bc60; /* Yellow */
+  color: #001e1d;           /* Dark text */
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover,
+.resend-button:hover {
+  background-color: #e16162; /* Red accent */
+  color: #fffffe;            /* White text */
+}
+
+/* ==============================
+   Confirmation Message
+   ============================== */
+.confirmation-message {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: #e16162; /* Tertiary (error/success) */
+}
+
+/* ==============================
+   Footer inside Form
+   ============================== */
+.form-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 32px;
+}
+
+.form-footer p {
+  color: #001e1d;
+}
+
+.form-footer p a {
+  color: #001e1d !important;
+  font-weight: bold;
+}
+
+.form-footer p a:hover {
+  color: #e16162 !important; /* Hover effect */
+}
+
+/* ==============================
+   Page Footer
+   ============================== */
+footer {
+  background-color: #001e1d;
+  color: #abd1c6;
+  padding: 20px;
+  text-align: center;
+}
+
+footer .social-media a {
+  color: #f9bc60;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+footer .social-media a:hover {
+  color: #e16162;
+}

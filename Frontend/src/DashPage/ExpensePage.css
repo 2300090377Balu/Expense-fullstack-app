@@ -1,0 +1,339 @@
+/* ==============================
+  Reset & Base
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #004643;
+  color: #fffffe;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==============================
+  Expense Page Layout
+============================== */
+.expense-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: #004643; /* Full dashboard background */
+  color: #fffffe;
+}
+
+/* ==============================
+  Sidebar (Same as Dashboard)
+============================== */
+.sidebar {
+  width: 60px;
+  background-color: #002b2a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  transition: width 0.4s ease;
+  position: fixed; /* Important for layout */
+  height: 100vh;
+  z-index: 200;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+}
+
+.sidebar.open {
+  width: 200px;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: #f9bc60;
+  font-size: 24px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.toggle-btn:hover {
+  background-color: #e16162;
+  color: #001e1d;
+  transform: scale(1.1);
+}
+
+.nav-menu {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fffffe;
+  padding: 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: #e16162;
+}
+
+.nav-item span {
+  margin-left: 12px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.open .nav-item span {
+  display: inline;
+  opacity: 1;
+}
+
+.icons {
+  font-size: 18px;
+  color: #fffffe;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logout-btn {
+  background-color: #e16162;
+  border: none;
+  color: #fffffe;
+  padding: 16px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d62839;
+}
+
+.logout-btn span {
+  margin-left: 12px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.open .logout-btn span {
+  display: inline;
+  opacity: 1;
+}
+
+/* ==============================
+  Main Content Area
+============================== */
+.content {
+  flex-grow: 1;
+  margin-left: 60px; /* Pushes content away from the sidebar */
+  transition: margin-left 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  background-color: #004643;
+}
+
+.sidebar.open ~ .content {
+  margin-left: 200px; /* Adjusts margin when sidebar is open */
+}
+
+/* Header (Same as Dashboard) */
+.expense-page_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+   /* --- 👇 YOUR CHANGES ARE HERE --- */
+  background-color: #fffffe; /* ✅ Added white background */
+  color: #001e1d;           /* ✅ Changed default text color to dark */
+  border-radius: 8px;        /* Optional: adds rounded corners */
+  margin: 20px 40px 0;       /* Optional: adds some spacing */
+}
+
+.expense-page_header h1 {
+   color: #001e1d;
+  font-size: 2rem;
+}
+
+.expense-page_header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.expense-page_header .icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #001e1d;;
+}
+
+.expense-page_header .profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ==============================
+  Header Hover Effects
+============================== */
+
+/* --- 👇 ADD THESE RULES FOR THE HOVER EFFECT --- */
+
+/* For the 'Budget Flow' title */
+.expense-page_header h1:hover {
+  color: #e16162;
+  cursor: pointer;
+}
+
+/* For the notification bell and user icon */
+.expense-page_header .icon:hover {
+  color: #e16162;
+}
+
+/* For the profile name and icon together */
+.expense-page_header .profile:hover,
+.expense-page_header .profile:hover span {
+  color: #e16162;
+  cursor: pointer;
+}
+/* ==============================
+  Form Centering and Styling
+============================== */
+.form-wrapper {
+  flex-grow: 1; /* Takes up remaining vertical space */
+  display: flex; /* Enables flexbox for centering */
+  justify-content: center; /* Horizontally centers the card */
+  align-items: center; /* Vertically centers the card */
+  padding: 20px 40px;
+}
+
+.expense-form-card {
+  background-color: #fffffe;
+  border-radius: 12px;
+  padding: 36px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 800px; /* Adjust max-width as needed */
+  color: #001e1d;
+}
+
+.expense-form .form-row {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.expense-form .form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Allows groups to share space equally */
+  min-width: 200px; /* Prevents fields from becoming too narrow */
+}
+
+.expense-form .form-group.full-width {
+    flex-basis: 100%; /* Makes notes field take full width */
+}
+
+.expense-form label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.expense-form input,
+.expense-form select {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.expense-form .form-submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.expense-form button {
+  padding: 12px 28px;
+  background-color: #f9bc60;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.expense-form button:hover {
+  background-color: #e16162;
+  color: #fffffe;
+}
+
+/* ==============================
+  Toast & Floating Button
+============================== */
+.toast {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: #4BB543;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+  font-size: 1rem;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: translateY(-20px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #f9bc60;
+  color: #001e1d;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 100;
+}
+
+.floating-button:hover {
+  transform: scale(1.1);
+  background-color: #e16162;
+  color: #fffffe;
+}
