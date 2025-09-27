@@ -8,6 +8,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import Fin.repository.TransactionsRepository;
+import Fin.services.UserManagers;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +19,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import Fin.model.Budget;
 import Fin.model.Transaction;
 import Fin.model.User;
-import Fin.model.UserManagers;
 
 @RestController
 @RequestMapping("/user")
@@ -34,7 +35,7 @@ public class UsersController {
         this.transactionsRepository = transactionsRepository;
     }
     @Autowired
-    private Fin.model.BudgetService budgetService;
+    private Fin.services.BudgetService budgetService;
 
 
     // User Signup

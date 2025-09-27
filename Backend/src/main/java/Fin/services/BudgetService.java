@@ -1,4 +1,4 @@
-package Fin.model;
+package Fin.services;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import Fin.model.Budget;
+import Fin.model.CategoryBudget;
 import Fin.repository.BudgetRepository;
 
 @Service
@@ -15,14 +17,22 @@ public class BudgetService {
     private BudgetRepository budgetRepository;
 
     // ✅ Save or Update a Budget
-    public Budget saveBudget(Budget budget) {
-        if (budget != null && budget.getCategoryBudgets() != null) {
-            for (CategoryBudget cb : budget.getCategoryBudgets()) {
-                cb.setBudget(budget); // maintain relationship
+    public Budget saveBudget(Budget budget) 
+    {
+        if (budget == null) 
+        {
+            throw new IllegalArgumentException("Budget cannot be null");
+        }
+        if (budget.getCategoryBudgets() != null) 
+        {
+            for (CategoryBudget cb : budget.getCategoryBudgets()) 
+            {
+            cb.setBudget(budget); // maintain relationship
             }
         }
         return budgetRepository.save(budget);
     }
+
 
     // ✅ Get a Budget by User Email and Month
     public Optional<Budget> getBudgetForMonth(String userEmail, LocalDate month) {

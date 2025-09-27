@@ -1,4 +1,4 @@
-package Fin.model;
+package Fin.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;

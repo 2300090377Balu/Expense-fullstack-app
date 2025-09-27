@@ -1,9 +1,11 @@
-package Fin.model;
+package Fin.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import Fin.model.Transaction;
+import Fin.model.User;
 import Fin.repository.TransactionsRepository;
 import Fin.repository.UsersRepository;
 import jakarta.transaction.Transactional;
